@@ -33,32 +33,21 @@
             <main>
                 <section class="main-top">
                     <ul>
-                        <li><span class="pageviews-num">{{ views }}</span><span class="pageviews-words">K Pageviews</span></li>
+                        <li><span class="pageviews-num">{{ selected.pageviews }}</span><span class="pageviews-words">K Pageviews</span></li>
                         <li><span class="dollar-sign">$</span><span class="price">{{ price }}</span>/<span class="subscription-period">{{ subscriptionPeriod }}</span></li>
                     </ul>
                     <form class="range-form">
                         <label for="points"></label>
-                        <input type="range" id="points" name="points" min="0" max="10" @change="updateText($event)" v-model="formValues.slider"> <!-- <input type="range"> is known as a "slider". The line part is known as the "track" and the ball part is known as the "thumb". -->
+                        <input type="range" id="points" name="points" min="0" max="10" v-model="formValues.slider"> <!-- <input type="range"> is known as a "slider". The line part is known as the "track" and the ball part is known as the "thumb". -->
                         <!-- if you want a reminder on the 'v-model' reasoning, go here: https://www.youtube.com/watch?v=T-AE-GtSlN4 -->
                         <!-- remember that how v-model differs from v-bind is that v-model provides TWO-way binding (from the template (i.e., the HTML) to the 'data' property, and back) -->
 
                     </form>
                     <ul class="billing-options">
                         <li>Monthly Billing</li>
-
-
-
-                    <div>
-                        <pre>
-                            {{ JSON.stringify(formValues, null, 2) }}
-                        </pre>
-                    </div>
-
-
-
                         <li>
                             <label class="switch">
-                                <input type="checkbox" id="monthly-yearly-toggle" @click="updateText($event)" v-model="formValues.toggle">
+                                <input type="checkbox" id="monthly-yearly-toggle" v-model="formValues.toggle">
                                 <span class="slider round"></span>
                             </label>
                         </li>
