@@ -1,7 +1,7 @@
 const App = {
     data() {
         return {
-            // what belongs in 'data' is key-value pairs, in the form of arrays or whatever
+            // what belongs in 'data' is key-value pairs
             mappings: [
                 {
                     pageviews: 25,
